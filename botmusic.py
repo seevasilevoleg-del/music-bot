@@ -3,7 +3,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, fil
 import yt_dlp
 import os
 
-TOKEN = '8870779519:AAEg1Doprym9kY1EvSqh5A2820AFusdFDlc'
+TOKEN = '8921323726:AAGx4PAeG3oyFGI0gDk1EsLUEeVLqV9GsDI'
 
 search_results = {}
 
@@ -94,7 +94,7 @@ async def handle_song_selection(update, context):
             await query.message.delete()
             
     except Exception as e:
-        await query.message.reply_text(f"❌ Ошибка: {str(e)}")
+        await query.message.reply_text(f"❌ Ошибка при скачивании: {str(e)}")
 
 app = ApplicationBuilder().token(TOKEN).build()
 app.add_handler(CommandHandler('start', start))
